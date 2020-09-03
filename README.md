@@ -8,14 +8,14 @@ Otherwise you can find it here:
 https://github.com/google/benchmark
 
 
-The benchmark results are as follows:
-To calculate the time to push an item take
-*time(benchmark_push_minmax_heap) - time(benchmark_heap_baseline)*
-To calculate the time to make the heap take
-*time(benchmark_make_minmax_heap) - time(benchmark_heap_baseline)*
-To calculate the time to pop an item take
-*time(benchmark_pop_minmax_heap_min) - time(benchmark_make_minmax_heap)* or
-*time(benchmark_pop_minmax_heap_max) - time(benchmark_make_minmax_heap)*
+The benchmark results are as follows:  
+To calculate the time to push an item take  
+*time(benchmark_push_minmax_heap) - time(benchmark_heap_baseline)*  
+To calculate the time to make the heap take  
+*time(benchmark_make_minmax_heap) - time(benchmark_heap_baseline)*  
+To calculate the time to pop an item take  
+*time(benchmark_pop_minmax_heap_min) - time(benchmark_make_minmax_heap)* or  
+*time(benchmark_pop_minmax_heap_max) - time(benchmark_make_minmax_heap)*  
 
 Meaning make sure to always subtract the baseline or the time to make the heap.
 
