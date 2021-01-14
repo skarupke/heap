@@ -562,7 +562,7 @@ void make_dary_heap(It begin, It end, Compare && compare)
     // optimization: there can be only one item that has fewer than D children
     // handling that item up front simplifies the second loop a little, since
     // we know that all other items have two children
-    int num_children_end = (length - 1) % D;
+    int num_children_end = int(length - 1) % D;
     if (num_children_end)
     {
         It largest_child = dary_heap_helpers::largest_child<D>(begin + dary_heap_helpers::first_child_index<D>(index), num_children_end, compare);
@@ -603,7 +603,7 @@ void make_dary_heap(It begin, It end, Compare && compare)
             else if (first_child_index >= length)
                 break;
             else
-                largest_child = dary_heap_helpers::largest_child<D>(begin + first_child_index, length - first_child_index, compare);
+                largest_child = dary_heap_helpers::largest_child<D>(begin + first_child_index, int(length - first_child_index), compare);
             if (!compare(value, *largest_child))
                 break;
             begin[move_down_index] = std::move(*largest_child);
@@ -682,7 +682,7 @@ void pop_dary_heap(It begin, It end, Compare && compare)
         }
         else if (first_child < length)
         {
-            It largest_child = dary_heap_helpers::largest_child<D>(begin + first_child, length - first_child, compare);
+            It largest_child = dary_heap_helpers::largest_child<D>(begin + first_child, int(length - first_child), compare);
             if (compare(value, *largest_child))
             {
                 begin[index] = std::move(*largest_child);
